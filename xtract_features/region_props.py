@@ -1,5 +1,9 @@
 # from imports import *
-from helpers import *
+# from helpers import *
+
+def show(img, title=None):
+    plt.imshow(img, cmap=plt.cm.bone)
+    if title is not None: plt.title = title
 
 class region_props:
     def __init__(self, image, sq = square(3)):
