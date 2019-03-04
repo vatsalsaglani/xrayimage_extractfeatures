@@ -1,7 +1,7 @@
 # extract image from array,
 # arguments: path to image files
 
-from imports import *
+# from imports import *
 
 def extract_img_array(path, getID = False):
     lst_files = []

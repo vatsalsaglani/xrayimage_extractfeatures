@@ -1,4 +1,4 @@
-from imports import *
+# from imports import *
 
 class glcm:
     def __init__(self, image):

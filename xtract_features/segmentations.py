@@ -1,4 +1,4 @@
-from imports import *
+# from imports import *
 
 def water_seg(image, footprint = np.ones((3,3))):
     distance = ndi.distance_transform_edt(image)
