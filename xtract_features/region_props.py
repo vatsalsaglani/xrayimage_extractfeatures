@@ -1,5 +1,5 @@
 # from imports import *
-from helpers import show
+from helpers import *
 
 class region_props:
     def __init__(self, image, sq = square(3)):
