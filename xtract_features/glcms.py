@@ -1,6 +1,7 @@
 # from imports import *
 # all import statements
-from xtract_features.imports import *
+# from xtract_features.imports import *
+from .imports import *
 
 class glcm:
     def __init__(self, image):
