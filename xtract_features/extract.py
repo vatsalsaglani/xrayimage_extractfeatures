@@ -1,72 +1,40 @@
 # from imports import *
-from glcms import *
-from region_props import *
-from moments import *
-# all import statements
-import numpy as np
-import pandas as pd
-import pydicom as pyd
-import os
-import matplotlib.pyplot as plt
-# import mudicom
-import scipy
-import pickle
-import cv2
-import math
-import statistics
-
-from numpy import newaxis
-from numpy import array
-from os.path import dirname, join
-# from pydicom.data import get_testdata_files
-# from pydicom.filereader import read_dicomdir
-from PIL import Image
-from scipy.misc import imresize
-from scipy.signal import convolve2d
-from skimage.segmentation import slic, mark_boundaries, clear_border
-from skimage.measure import label, regionprops
-from skimage.filters import threshold_otsu
-from skimage.morphology import closing, square
-from skimage.color import label2rgb
-from scipy import ndimage as ndi
-from skimage.morphology import watershed
-from skimage.feature import peak_local_max
-from skimage.measure import shannon_entropy
-from skimage import io, color, img_as_ubyte
-from skimage.feature import greycomatrix, greycoprops
-from sklearn.metrics.cluster import entropy
-
+from xtract_features.imports import *
+from xtract_features.helpers import *
+from xtract_features.glcms import *
+from xtract_features.moments import *
+from xtract_features.region_props import *
 # from helpers import extract_img_array
 
-def extract_img_array(path, getID = False):
-    lst_files = []
-    for dir_name, sub_dir_list, file_list in os.walk(path):
-        for file_name in file_list:
-            if ".dcm" in file_name.lower():
-                lst_files.append(os.path.join(dir_name, file_name))
-    dcm_np = []
-    _ids = []
-    for dcm in lst_files:
-        img = pyd.dcmread(dcm)
-        img = pyd.pixel_array
-        dcm_np.append(img)
-        if getID == True:
-            _ids.append(dcm.split('/')[1].split('.')[0])
+# def extract_img_array(path, getID = False):
+#     lst_files = []
+#     for dir_name, sub_dir_list, file_list in os.walk(path):
+#         for file_name in file_list:
+#             if ".dcm" in file_name.lower():
+#                 lst_files.append(os.path.join(dir_name, file_name))
+#     dcm_np = []
+#     _ids = []
+#     for dcm in lst_files:
+#         img = pyd.dcmread(dcm)
+#         img = pyd.pixel_array
+#         dcm_np.append(img)
+#         if getID == True:
+#             _ids.append(dcm.split('/')[1].split('.')[0])
 
-    return dcm_np, _ids
+#     return dcm_np, _ids
 
-def save_pickle(file, file_name):
-    with open(file_name, "wb") as fp:
-        pickle.dump(file, fp)
+# def save_pickle(file, file_name):
+#     with open(file_name, "wb") as fp:
+#         pickle.dump(file, fp)
 
 
 # load the saved pickle files.
 # arguments: name of the file
 
-def load_pickle(file_name):
-    with open(file_name, "rb") as fp:
-        file =  pickle.load(fp)
-    return file
+# def load_pickle(file_name):
+#     with open(file_name, "rb") as fp:
+#         file =  pickle.load(fp)
+#     return file
 
 def plots(ims, figsize=(12,6), rows=2, titles=None):
     f = plt.figure(figsize=figsize)
