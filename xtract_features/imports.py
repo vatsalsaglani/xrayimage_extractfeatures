@@ -4,7 +4,7 @@ import pandas as pd
 import pydicom as pyd
 import os
 import matplotlib.pyplot as plt
-import mudicom
+# import mudicom
 import scipy
 import pickle
 import cv2
