@@ -1,9 +1,11 @@
 # from imports import *
 # from helpers import *
 # all import statements
-from xtract_features.imports import *
-from xtract_features.helpers import *
+# from xtract_features.imports import *
+# from xtract_features.helpers import *
 
+from .imports import *
+from .helpers import *
 
 
 class region_props:

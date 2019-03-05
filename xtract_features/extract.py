@@ -1,9 +1,17 @@
-# from imports import *
-from xtract_features.imports import *
-from xtract_features.helpers import *
-from xtract_features.glcms import *
-from xtract_features.moments import *
-from xtract_features.region_props import *
+# # from imports import *
+# from xtract_features.imports import *
+# from xtract_features.helpers import *
+# from xtract_features.glcms import *
+# from xtract_features.moments import *
+# from xtract_features.region_props import *
+
+######
+from .imports import *
+from .glcms import *
+from .helpers import *
+from .moments import *
+from .region_props import *
+
 # from helpers import extract_img_array
 
 # def extract_img_array(path, getID = False):

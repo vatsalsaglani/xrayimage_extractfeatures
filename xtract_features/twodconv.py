@@ -1,4 +1,5 @@
-from xtract_features.imports import *
+# from xtract_features.imports import *
+from .imports import *
 # kernels
 
 # 1. Identity Kernel

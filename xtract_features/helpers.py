@@ -3,7 +3,8 @@
 
 # from imports import *
 # all import statements
-from xtract_features.imports import *
+# from xtract_features.imports import *
+from .imports import *
 
 def extract_img_array(path, getID = False):
     lst_files = []
