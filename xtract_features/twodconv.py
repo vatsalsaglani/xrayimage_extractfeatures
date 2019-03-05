@@ -2,6 +2,8 @@
 
 # 1. Identity Kernel
 
+import numpy as np
+
 identity_k = np.array([
     [0, 0, 0],
     [0, 1, 0],
