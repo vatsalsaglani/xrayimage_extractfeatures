@@ -168,7 +168,7 @@ def feature_dict_from_imgarray(imgArray, pat_id_array, getId=False):
 
 def get_df_from_path(path, pat_id_array, getId = False):
     if getId == True:
-        data = feature_dict_from_imgpath(path, getId=True, pat_id_array)
+        data = feature_dict_from_imgpath(path, pat_id_array, getId=True)
     else:
         data = feature_dict_from_imgpath(path, pat_id_array)
     df = pd.DataFrame(data)
