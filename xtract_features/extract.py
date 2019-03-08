@@ -14,20 +14,20 @@ from .region_props import *
 
 # from helpers import extract_img_array
 
-# def extract_img_array(path, getID = False):
-#     lst_files = []
-#     for dir_name, sub_dir_list, file_list in os.walk(path):
-#         for file_name in file_list:
-#             if ".dcm" in file_name.lower():
-#                 lst_files.append(os.path.join(dir_name, file_name))
-#     dcm_np = []
-#     _ids = []
-#     for dcm in lst_files:
-#         img = pyd.dcmread(dcm)
-#         img = pyd.pixel_array
-#         dcm_np.append(img)
-#         if getID == True:
-#             _ids.append(dcm.split('/')[1].split('.')[0])
+def extract_img_array(path, getID = False):
+    lst_files = []
+    for dir_name, sub_dir_list, file_list in os.walk(path):
+        for file_name in file_list:
+            if ".dcm" in file_name.lower():
+                lst_files.append(os.path.join(dir_name, file_name))
+    dcm_np = []
+    _ids = []
+    for dcm in lst_files:
+        img = pyd.dcmread(dcm)
+        img = img.pixel_array
+        dcm_np.append(img)
+        if getID == True:
+            _ids.append(dcm.split('/')[1].split('.')[0])
 
 #     return dcm_np, _ids
 
@@ -147,7 +147,7 @@ def get_df_from_path(path, pat_id_array, getId = False):
         data = feature_dict_from_imgpath(path, pat_id_array, getId=True)
     else:
         data = feature_dict_from_imgpath(path, pat_id_array)
-    df = pd.DataFrame(data)
+    df = pd.DataFrame(data).T
     return df
 
 def get_df_from_img_array(img_array,pat_id_array, getId = False):
@@ -155,6 +155,6 @@ def get_df_from_img_array(img_array,pat_id_array, getId = False):
         data = feature_dict_from_imgarray(img_array,pat_id_array, getId=True)
     else:
         data = feature_dict_from_imgarray(img_array, pat_id_array)
-    df = pd.DataFrame(data)
+    df = pd.DataFrame(data).T
     return df
     
