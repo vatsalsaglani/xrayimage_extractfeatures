@@ -4,7 +4,6 @@ import pandas as pd
 import pydicom as pyd
 import os
 import matplotlib.pyplot as plt
-# import mudicom
 import scipy
 import pickle
 import cv2
@@ -14,8 +13,7 @@ import statistics
 from numpy import newaxis
 from numpy import array
 from os.path import dirname, join
-# from pydicom.data import get_testdata_files
-# from pydicom.filereader import read_dicomdir
+from tqdm import tqdm
 from PIL import Image
 from scipy.misc import imresize
 from scipy.signal import convolve2d

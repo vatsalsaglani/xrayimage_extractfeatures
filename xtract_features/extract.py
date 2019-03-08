@@ -20,7 +20,7 @@ def feature_dict_from_imgpath(path, pat_id_array, getId=False):
     data_dict = dict()
     if getId == True:
         imgArray, _ids = extract_img_array(path, getID=True)
-        for dc in range(len(imgArray)):
+        for dc in tqdm(range(len(imgArray))):
             _g = glcm(imgArray[dc])
             _r = region_props(imgArray(dc))
             _m = moments(imgArray[dc])
@@ -38,7 +38,7 @@ def feature_dict_from_imgpath(path, pat_id_array, getId=False):
         # return data_dict
     else:
         imgArray, _ids = extract_img_array(path)
-        for dc in range(len(imgArray)):
+        for dc in tqdm(range(len(imgArray))):
             _g = glcm(imgArray[dc])
             _r = region_props(imgArray[dc])
             _m = moments(imgArray[dc])
@@ -61,7 +61,7 @@ def feature_dict_from_imgpath(path, pat_id_array, getId=False):
 def feature_dict_from_imgarray(imgArray, pat_id_array, getId=False):
     data_dict = dict()
     if getId == True:
-        for dc in range(len(imgArray)):
+        for dc in tqdm(range(len(imgArray))):
             _g = glcm(imgArray[dc])
             _r = region_props(imgArray(dc))
             _m = moments(imgArray[dc])
@@ -77,7 +77,7 @@ def feature_dict_from_imgarray(imgArray, pat_id_array, getId=False):
 
             ]
     else:
-        for dc in range(len(imgArray)):
+        for dc in tqdm(range(len(imgArray))):
             _g = glcm(imgArray[dc])
             _r = region_props(imgArray[dc])
             _m = moments(imgArray[dc])

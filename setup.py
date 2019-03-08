@@ -9,7 +9,7 @@ setup(
     # Needed to actually package something
     packages=['xtract_features'],
     # Needed for dependencies
-    install_requires=['numpy', 'pandas', 'pydicom', 'matplotlib', 'scipy', 'opencv-python', 'opencv-contrib-python', 'Pillow', 'scipy', 'scikit-image', 'scikit-learn'],
+    install_requires=['numpy', 'pandas', 'pydicom', 'matplotlib', 'scipy', 'opencv-python', 'opencv-contrib-python', 'Pillow', 'scipy', 'scikit-image', 'scikit-learn', 'tqdm'],
     # *strongly* suggested for sharing
     version='0.1',
     # The license can be anything you like
