@@ -16,7 +16,7 @@ def extract_img_array(path, getID = False):
     _ids = []
     for dcm in lst_files:
         img = pyd.dcmread(dcm)
-        img = pyd.pixel_array
+        img = img.pixel_array
         dcm_np.append(img)
         if getID == True:
             _ids.append(dcm.split('/')[1].split('.')[0])
