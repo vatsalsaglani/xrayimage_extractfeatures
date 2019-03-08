@@ -1,9 +1,4 @@
-# # from imports import *
-# from xtract_features.imports import *
-# from xtract_features.helpers import *
-# from xtract_features.glcms import *
-# from xtract_features.moments import *
-# from xtract_features.region_props import *
+
 
 ######
 from .imports import *
@@ -11,48 +6,6 @@ from .glcms import *
 from .helpers import *
 from .moments import *
 from .region_props import *
-
-# from helpers import extract_img_array
-
-def extract_img_array(path, getID = False):
-    lst_files = []
-    for dir_name, sub_dir_list, file_list in os.walk(path):
-        for file_name in file_list:
-            if ".dcm" in file_name.lower():
-                lst_files.append(os.path.join(dir_name, file_name))
-    dcm_np = []
-    _ids = []
-    for dcm in lst_files:
-        img = pyd.dcmread(dcm)
-        img = img.pixel_array
-        dcm_np.append(img)
-        if getID == True:
-            _ids.append(dcm.split('/')[1].split('.')[0])
-
-#     return dcm_np, _ids
-
-# def save_pickle(file, file_name):
-#     with open(file_name, "wb") as fp:
-#         pickle.dump(file, fp)
-
-
-# load the saved pickle files.
-# arguments: name of the file
-
-# def load_pickle(file_name):
-#     with open(file_name, "rb") as fp:
-#         file =  pickle.load(fp)
-#     return file
-
-def plots(ims, figsize=(12,6), rows=2, titles=None):
-    f = plt.figure(figsize=figsize)
-    cols = len(ims)//rows
-    for i in range(len(ims)):
-        sp = f.add_subplot(rows, cols, i+1)
-        sp.axis('Off')
-        if titles is not None: sp.set_title(titles[i], fontsize=16)
-        plt.imshow(ims[i], cmap=plt.cm.bone)
-
 
 
 def s_entropy(image):
@@ -63,7 +16,7 @@ def entropy_simple(image):
     return entropy(image)
 
 
-def feature_dict_from_imgpath(path, pat_id_array, getId = False):
+def feature_dict_from_imgpath(path, pat_id_array, getId=False):
     data_dict = dict()
     if getId == True:
         imgArray, _ids = extract_img_array(path, getID=True)
@@ -142,7 +95,7 @@ def feature_dict_from_imgarray(imgArray, pat_id_array, getId=False):
     return data_dict
 
 
-def get_df_from_path(path, pat_id_array, getId = False):
+def get_df_from_path(path, pat_id_array, getId=False):
     if getId == True:
         data = feature_dict_from_imgpath(path, pat_id_array, getId=True)
     else:
@@ -150,11 +103,11 @@ def get_df_from_path(path, pat_id_array, getId = False):
     df = pd.DataFrame(data).T
     return df
 
-def get_df_from_img_array(img_array,pat_id_array, getId = False):
+
+def get_df_from_img_array(img_array, pat_id_array, getId=False):
     if getId == True:
-        data = feature_dict_from_imgarray(img_array,pat_id_array, getId=True)
+        data = feature_dict_from_imgarray(img_array, pat_id_array, getId=True)
     else:
         data = feature_dict_from_imgarray(img_array, pat_id_array)
     df = pd.DataFrame(data).T
     return df
-    
