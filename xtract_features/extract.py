@@ -6,6 +6,7 @@ from .glcms import *
 from .helpers import *
 from .moments import *
 from .region_props import *
+from tqdm import tqdm
 
 
 def s_entropy(image):
