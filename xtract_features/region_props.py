@@ -23,6 +23,7 @@ class region_props:
         _m = max(self.lista, default=-1)
         if _m == -1:
             self.idx = -1
+            continue
         else:
             self.idx = self.lista.index(_m)
         
