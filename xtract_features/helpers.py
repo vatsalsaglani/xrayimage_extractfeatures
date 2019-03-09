@@ -15,9 +15,15 @@ def extract_img_array(path, getID=False):
         img = img.pixel_array
         dcm_np.append(img)
         if getID == True:
-            _ids.append(dcm.split('/')[1].split('.')[0])
+            # _ids.append(dcm.split('/')[1].split('.')[0])
+            _ids.append(extract_id(dcm))
 
     return dcm_np, _ids
+
+def extract_id(path):
+    _id = path.split('/')[-1].split('.')[0]
+    return _id
+
 
 
 # save files/list/ any datastructure to pickle file.
