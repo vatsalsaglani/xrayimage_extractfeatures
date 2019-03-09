@@ -19,11 +19,11 @@ class region_props:
         self.lista = []
         for e in self.regions:
             self.lista.append(e.area)
-        if len(self.lista) > 0:
-            self.idx = self.lista.index(max(self.lista))
+        if max(self.lista, default=-1) == -1:
+            self.idx = -1
         else:
-            return -1
-
+            self.idx = self.lista.index(max(self.lista, default=-1))
+        
     # shows the bw plot black and white patches
 
     def plot_show_bw(self):
@@ -44,31 +44,39 @@ class region_props:
 
     # gives the eccentricity of the max area region
     def eccentricity(self):
-        if len(self.lista) > 0:
+        if self.idx == -1:
             return -1
+        # if len(self.lista) > 0:
+            # return -1
 
         else:
             return self.regions[self.idx].eccentricity
 
     # gives the euler numner of the max area region
     def euler_number(self):
-        if len(self.lista) > 0:
-            return self.regions[self.idx].euler_number
+        if self.idx == -1:
+            return -1
+        # if len(self.lista) > 0:
+            # return self.regions[self.idx].euler_number
         else:
             return -1
 
     # returns the solidity of the max area region
     def solidity(self):
-        if len(self.lista) > 0:
-            return self.regions[self.idx].solidity
+        if self.idx == -1:
+            return -1
+        # if len(self.lista) > 0:
+            # return self.regions[self.idx].solidity
 
         else:
             return -1
 
     # returns the perimeter of the max area region
     def perimeter(self):
-        if len(self.lista) > 0:
-            return self.regions[self.idx].perimeter
+        if self.idx == -1:
+            return -1
+        # if len(self.lista) > 0:
+            # return self.regions[self.idx].perimeter
 
         else:
             return -1
@@ -94,7 +102,8 @@ class region_props:
 
     # returns the coordinates of the boundary box of the max area region
     def bb(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].bbox
 
         else:
@@ -102,7 +111,8 @@ class region_props:
 
     # returns the area of the boundary box.
     def bb_area(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].bbox_area
 
         else:
@@ -110,7 +120,8 @@ class region_props:
 
     # returns the centroid of the max area region
     def centroid_r(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].centroid
 
         else:
@@ -118,7 +129,8 @@ class region_props:
 
     # returns the convex area of the max area region
     def convex_area_r(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].convex_area
 
         else:
@@ -126,7 +138,8 @@ class region_props:
 
     # gives all the coordinates of the max area region
     def coordinates_r(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].coords
 
         else:
@@ -134,6 +147,7 @@ class region_props:
 
     # returns the equivalent diameter of the max area region
     def eq_diameter(self):
+        if self.idx != -1:
         if len(self.lista) > 0:
             return self.regions[self.idx].equivalent_diameter
 
@@ -141,7 +155,8 @@ class region_props:
             return -1
 
     def extent_r(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return -1
 
         else:
@@ -149,7 +164,8 @@ class region_props:
 
     # returns the filled area of the max area of the region
     def filled_area_r(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].filled_area
 
         else:
@@ -157,7 +173,8 @@ class region_props:
 
     # returns the inertia tensor of the max area region
     def inertia_tensor_r(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].inertia_tensor
 
         else:
@@ -165,7 +182,8 @@ class region_props:
 
     # returns the eigen values of the inertia tensor of the max area regions
     def inertia_tensor_eigvals_r(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].inertia_tensor_eigvals
 
         else:
@@ -173,7 +191,8 @@ class region_props:
 
     # returns the label of the region
     def label_r(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].label
 
         else:
@@ -181,7 +200,8 @@ class region_props:
 
     # returns the local centroid of the max area
     def local_centroid_r(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].local_centroid
 
         else:
@@ -189,7 +209,8 @@ class region_props:
 
     # returns the major axis length of the ellipse of the max area region
     def maj_ax_len(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].major_axis_length
 
         else:
@@ -197,7 +218,8 @@ class region_props:
 
     # returns the minor axis length of the ellips of the max area region
     def min_ax_len(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].minor_axis_length
 
         else:
@@ -205,7 +227,8 @@ class region_props:
 
     # returns the orientation
     def orient(self):
-        if len(self.lista) > 0:
+        if self.idx != -1:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].orientation
 
         else:
