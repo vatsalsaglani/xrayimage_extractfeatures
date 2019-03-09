@@ -150,7 +150,7 @@ class region_props:
     # returns the equivalent diameter of the max area region
     def eq_diameter(self):
         if self.idx != -1:
-        if len(self.lista) > 0:
+        # if len(self.lista) > 0:
             return self.regions[self.idx].equivalent_diameter
 
         else:
