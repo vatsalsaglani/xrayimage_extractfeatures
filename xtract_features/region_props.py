@@ -22,11 +22,8 @@ class region_props:
         _l = len(self.lista)
         if _l == 0:
             self.idx = -1
-        # _m = max(self.lista, default=-1)
-        # if _m == -1:
-            # self.idx = -1
-            # continue
         else:
+            _m = max(self.lista)
             self.idx = self.lista.index(_m)
 
     # shows the bw plot black and white patches
