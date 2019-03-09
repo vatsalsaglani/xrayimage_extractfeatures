@@ -19,14 +19,16 @@ class region_props:
         self.lista = []
         for e in self.regions:
             self.lista.append(e.area)
-
-        _m = max(self.lista, default=-1)
-        if _m == -1:
+        _l = len(self.lista)
+        if _l == 0:
             self.idx = -1
-            continue
+        # _m = max(self.lista, default=-1)
+        # if _m == -1:
+            # self.idx = -1
+            # continue
         else:
             self.idx = self.lista.index(_m)
-        
+
     # shows the bw plot black and white patches
 
     def plot_show_bw(self):
@@ -106,7 +108,7 @@ class region_props:
     # returns the coordinates of the boundary box of the max area region
     def bb(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].bbox
 
         else:
@@ -115,7 +117,7 @@ class region_props:
     # returns the area of the boundary box.
     def bb_area(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].bbox_area
 
         else:
@@ -124,7 +126,7 @@ class region_props:
     # returns the centroid of the max area region
     def centroid_r(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].centroid
 
         else:
@@ -133,7 +135,7 @@ class region_props:
     # returns the convex area of the max area region
     def convex_area_r(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].convex_area
 
         else:
@@ -142,7 +144,7 @@ class region_props:
     # gives all the coordinates of the max area region
     def coordinates_r(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].coords
 
         else:
@@ -159,7 +161,7 @@ class region_props:
 
     def extent_r(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return -1
 
         else:
@@ -168,7 +170,7 @@ class region_props:
     # returns the filled area of the max area of the region
     def filled_area_r(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].filled_area
 
         else:
@@ -177,7 +179,7 @@ class region_props:
     # returns the inertia tensor of the max area region
     def inertia_tensor_r(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].inertia_tensor
 
         else:
@@ -186,7 +188,7 @@ class region_props:
     # returns the eigen values of the inertia tensor of the max area regions
     def inertia_tensor_eigvals_r(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].inertia_tensor_eigvals
 
         else:
@@ -195,7 +197,7 @@ class region_props:
     # returns the label of the region
     def label_r(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].label
 
         else:
@@ -204,7 +206,7 @@ class region_props:
     # returns the local centroid of the max area
     def local_centroid_r(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].local_centroid
 
         else:
@@ -213,7 +215,7 @@ class region_props:
     # returns the major axis length of the ellipse of the max area region
     def maj_ax_len(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].major_axis_length
 
         else:
@@ -222,7 +224,7 @@ class region_props:
     # returns the minor axis length of the ellips of the max area region
     def min_ax_len(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].minor_axis_length
 
         else:
@@ -231,7 +233,7 @@ class region_props:
     # returns the orientation
     def orient(self):
         if self.idx != -1:
-        # if len(self.lista) > 0:
+            # if len(self.lista) > 0:
             return self.regions[self.idx].orientation
 
         else:
