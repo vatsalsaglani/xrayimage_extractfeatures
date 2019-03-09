@@ -46,7 +46,7 @@ class region_props:
         if _aa == -1:
             return -1
         else:
-            
+
             return max(self.lista)
 
     # gives the eccentricity of the max area region
@@ -162,7 +162,7 @@ class region_props:
             return -1
 
     def extent_r(self):
-        if self.idx != -1:
+        if self.idx == -1:
             # if len(self.lista) > 0:
             return -1
 
