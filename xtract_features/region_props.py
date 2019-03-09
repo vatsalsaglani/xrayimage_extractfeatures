@@ -42,7 +42,12 @@ class region_props:
 
     # out of all the regions obtained from the image gives region area with the maximum area occupancy
     def max_area(self):
-        return max(self.lista)
+        _aa = max(self.lista, default = -1)
+        if _aa == -1:
+            return -1
+        else:
+            
+            return max(self.lista)
 
     # gives the eccentricity of the max area region
     def eccentricity(self):
