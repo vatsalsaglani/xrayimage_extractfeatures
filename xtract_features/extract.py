@@ -23,7 +23,7 @@ def feature_dict_from_imgpath(path, pat_id_array, getId=False):
         imgArray, _ids = extract_img_array(path, getID=True)
         for dc in tqdm(range(len(imgArray))):
             _g = glcm(imgArray[dc])
-            _r = region_props(imgArray(dc))
+            _r = region_props(imgArray[dc])
             _m = moments(imgArray[dc])
             data_dict[pat_id_array[dc]] = [
                 s_entropy(imgArray[dc]), entropy_simple(imgArray[dc]),
@@ -64,7 +64,7 @@ def feature_dict_from_imgarray(imgArray, pat_id_array, getId=False):
     if getId == True:
         for dc in tqdm(range(len(imgArray))):
             _g = glcm(imgArray[dc])
-            _r = region_props(imgArray(dc))
+            _r = region_props(imgArray[dc])
             _m = moments(imgArray[dc])
             data_dict[pat_id_array[dc]] = [
                 s_entropy(imgArray[dc]), entropy_simple(imgArray[dc]),
