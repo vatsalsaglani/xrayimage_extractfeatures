@@ -9,8 +9,28 @@ The package is tested on _**python3**_ and is working as required. You need to h
 ```
 sudo apt-get update
 
+# Opencv-Deps
+sudo apt-get install build-essential checkinstall cmake pkg-config yasm
+sudo apt-get install git gfortran
+sudo apt-get install libjpeg8-dev libjasper-dev libpng12-dev
+sudo apt-get install libtiff5-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev
+sudo apt-get install libxine2-dev libv4l-dev
+sudo apt-get install libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
+sudo apt-get install qt5-default libgtk2.0-dev libtbb-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libfaac-dev libmp3lame-dev libtheora-dev
+sudo apt-get install libvorbis-dev libxvidcore-dev
+sudo apt-get install libopencore-amrnb-dev libopencore-amrwb-dev
+sudo apt-get install x264 v4l-utils
+sudo apt-get install libprotobuf-dev protobuf-compiler
+sudo apt-get install libgoogle-glog-dev libgflags-dev
+sudo apt-get install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen 
+
+
 sudo apt-get install python3-dev python3-pip
- 
+
+# package installation 
 pip3 install git+https://github.com/vatsalsaglani/xrayimage_extractfeatures.git
 
 ```
@@ -47,7 +67,7 @@ pip3 install git+https://github.com/vatsalsaglani/xrayimage_extractfeatures.git
 	- 2D Convolutions
 	- Segmentation
 
-## Helpers
+## 1. Helpers
 
 ![Import Helpers](images/helpers1.png)
 ![extract-img-array](images/helpers2.png)
@@ -59,7 +79,7 @@ pip3 install git+https://github.com/vatsalsaglani/xrayimage_extractfeatures.git
 ![load the saved data](images/helpers6.png)
 
 
-## Feature Extraction
+## 2. Feature Extraction
 
 ![intro](images/extract1.png)
 ![feature dictionary](images/extract2.png)
@@ -73,21 +93,21 @@ pip3 install git+https://github.com/vatsalsaglani/xrayimage_extractfeatures.git
 <br><br>
 
 
-## GLCM Features
+## 3. GLCM Features
 
 ![glcms](images/glcm.png)
 ![glcmall](images/glcm_all.png)
 <br><br>
 
 
-## Moments
+## 4. Moments
 
 ![24 moments](images/moments.png)
 ![hu moments](images/moments_hu.png)
 <br><br>
 
 
-## Region Properties
+## 5. Region Properties
 
 ![region props 1](images/region_props1.png)
 ![region props 2](images/region_props2.png)
@@ -95,14 +115,14 @@ pip3 install git+https://github.com/vatsalsaglani/xrayimage_extractfeatures.git
 <br><br>
 
 
-## Extras
+## 6. Extras
 
-### 2D Convolutions
+### a. 2D Convolutions
 
 ![2d Conv](images/conv2d.png)
 <br><br>
 
-### Segmentation
+### b. Segmentation
 
 ![watershed segmentation](images/seg.png)
 
