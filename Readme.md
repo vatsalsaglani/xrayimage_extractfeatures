@@ -6,6 +6,8 @@ This package is developed to extract **GLCM**, **Region Properties**, and **Mome
 ## Installing the package:
 The package is tested on _**python3**_ and is working as required. You need to have python3 in your systems. Use the following commands to get started with the package.
 
+### Installing OpenCV Dependencies
+
 ```
 sudo apt-get update
 
@@ -26,14 +28,26 @@ sudo apt-get install x264 v4l-utils
 sudo apt-get install libprotobuf-dev protobuf-compiler
 sudo apt-get install libgoogle-glog-dev libgflags-dev
 sudo apt-get install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen 
-
-
 sudo apt-get install python3-dev python3-pip
+```
+### Installing using pip:
 
-# package installation 
-pip3 install git+https://github.com/vatsalsaglani/xrayimage_extractfeatures.git
 
 ```
+# package installation 
+pip3 install git+https://github.com/vatsalsaglani/xrayimage_extractfeatures.git
+```
+
+### Clone and Install:
+
+```
+git clone https://github.com/vatsalsaglani/xrayimage_extractfeatures.git
+cd xrayimage_extractfeatures
+python3 setup.py install
+
+```
+
+
 
 ## Getting Started:
 
