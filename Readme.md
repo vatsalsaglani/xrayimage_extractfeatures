@@ -1,4 +1,4 @@
-# xtract-features = 0.0.1
+# xtract-features = 0.1
 
 #### Introduction:
 This package is developed to extract **GLCM**, **Region Properties**, and **Moments** related features in a line of code and then get those into a _data-frame_. This package only works for _**two channel**_ _grayscale_ images and generally is developed to extract features from X-ray images. The package isn't currently available on **PyPi** or **Anaconda** because more CBIR based features will be added to this package.  
